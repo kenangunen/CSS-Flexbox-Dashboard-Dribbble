@@ -3,6 +3,12 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -21,6 +27,27 @@ body {
   background-color: #e4e9f8;
 }
 
+.flexColmn, nav .menu, nav .menu .top, nav .menu .top .textLogo, nav .menu .middle, nav .menu .bottom, nav .sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileImg, nav .menu .bottom .profil-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.allBtn, main .top .bar .user-btn button {
+  outline: none;
+  border: none;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,13 +60,74 @@ nav {
   background-color: #f4f6fd;
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
-  padding: 35px 80px;
+  padding: 50px 50px;
 }
 
 nav .menu {
   position: relative;
-  width: 30%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 25%;
   height: 100%;
+}
+
+nav .menu .top .menu-icon {
+  margin: 0 0 40px 0;
+}
+
+nav .menu .top .textLogo {
+  position: relative;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+}
+
+nav .menu .top .textLogo::before {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  right: 102px;
+  display: block;
+  width: 3px;
+  background: #ff48ee;
+  height: 3.5rem;
+}
+
+nav .menu .top .textLogo .text {
+  position: relative;
+  letter-spacing: -1.2px;
+  right: 10px;
+  font-size: 2rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #2c3550;
+}
+
+nav .menu .top .textLogo .dot {
+  position: relative;
+  right: 1px;
+  bottom: 25px;
+  color: #ff48ee;
+  font-size: 2.3rem;
+}
+
+nav .menu .middle {
+  position: relative;
+  bottom: 90px;
+}
+
+nav .menu .middle object {
+  margin: 0 0 40px 0;
+}
+
+nav .menu .bottom .profil-pic {
+  background-color: #ff48ee;
+  margin-bottom: 1.6rem;
 }
 
 nav .block {
@@ -49,8 +137,30 @@ nav .block {
 }
 
 nav .sub-menu {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 60%;
   height: 100%;
+  font-size: 0.9rem;
+}
+
+nav .sub-menu .top li {
+  margin: 0 0 40px 0;
+}
+
+nav .sub-menu .top .selected {
+  color: #ff48ee;
+}
+
+nav .sub-menu .bottom li:first-child {
+  font-size: 0.7rem;
+  color: #8894b5;
+  letter-spacing: 1.2px;
+}
+
+nav .sub-menu .bottom li {
+  margin: 40px 0 0px 0;
 }
 
 main {
@@ -59,7 +169,7 @@ main {
   height: 80%;
   background-color: #ffffff;
   border-radius: 35px;
-  padding: 35px 80px;
+  padding: 50px 50px;
 }
 
 main::before {
@@ -72,5 +182,78 @@ main::before {
   background: #f4f6fd;
   height: 100%;
   z-index: -1;
+}
+
+main .section-arrow {
+  position: absolute;
+  left: -14px;
+  top: 105px;
+}
+
+main .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .top .active-menu {
+  margin-top: 30px;
+}
+
+main .top .active-menu span {
+  color: #8894b5;
+  font-size: 1.5rem;
+  font-family: "Libre Baskerville", serif;
+  margin-bottom: 20px;
+}
+
+main .top .active-menu h2 {
+  color: #2c3550;
+  font-size: 3.2rem;
+  letter-spacing: -2px;
+}
+
+main .top .bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .top .bar .user-btn {
+  margin-left: 12px;
+}
+
+main .top .bar .user-btn button {
+  height: 55px;
+  width: 55px;
+  border-radius: 14px;
+  background-color: #f4f6fd;
+}
+
+main .top .bar .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  margin-left: 30px;
+  color: #8894b5;
+  background-color: #f4f6fd;
+  height: 55px;
+  border-radius: 35px;
+  background-color: #f4f6fd;
+  width: 275px;
+}
+
+main .top .bar .search-bar span {
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=main.css.map */
