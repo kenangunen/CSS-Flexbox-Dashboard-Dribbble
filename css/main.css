@@ -27,7 +27,7 @@ body {
   background-color: #e4e9f8;
 }
 
-.flexColmn, nav .menu, nav .menu .top, nav .menu .top .textLogo, nav .menu .middle, nav .menu .bottom, nav .sub-menu {
+.flexColmn, nav .menu, nav .menu .top, nav .menu .top .textLogo, nav .menu .middle, nav .menu .bottom, nav .subMenu, main .container, main .middle .project {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,30 +37,34 @@ body {
           flex-direction: column;
 }
 
-.profileImg, nav .menu .bottom .profil-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
 .allBtn, main .top .bar .user-btn button {
   outline: none;
   border: none;
+}
+
+.flexCenter, main .middle .project .pIcon .iconContainerLeft, main .middle .project .pIcon .iconContainerRight, main .middle .addProject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 20%;
-  height: 80%;
+  height: 100%;
   background-color: #f4f6fd;
-  border-top-left-radius: 35px;
-  border-bottom-left-radius: 35px;
-  padding: 50px 50px;
+  padding: 50px 40px;
 }
 
 nav .menu {
@@ -71,7 +75,7 @@ nav .menu {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 25%;
+  width: 20%;
   height: 100%;
 }
 
@@ -88,10 +92,10 @@ nav .menu .top .textLogo {
 nav .menu .top .textLogo::before {
   content: '';
   position: absolute;
-  bottom: 40px;
-  right: 102px;
+  bottom: 39px;
+  right: 91px;
   display: block;
-  width: 3px;
+  width: 4px;
   background: #ff48ee;
   height: 3.5rem;
 }
@@ -125,18 +129,23 @@ nav .menu .middle object {
   margin: 0 0 40px 0;
 }
 
-nav .menu .bottom .profil-pic {
-  background-color: #ff48ee;
+nav .menu .bottom .user-pic {
+  background-image: url("../img/user-1.jpg");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   margin-bottom: 1.6rem;
 }
 
 nav .block {
+  margin-right: 20px;
   border: 1px solid #e6e9f4;
   width: 0;
   height: 100%;
 }
 
-nav .sub-menu {
+nav .subMenu {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -145,31 +154,34 @@ nav .sub-menu {
   font-size: 0.9rem;
 }
 
-nav .sub-menu .top li {
+nav .subMenu .top li {
   margin: 0 0 40px 0;
 }
 
-nav .sub-menu .top .selected {
+nav .subMenu .top .selected {
   color: #ff48ee;
 }
 
-nav .sub-menu .bottom li:first-child {
+nav .subMenu .bottom li:first-child {
   font-size: 0.7rem;
   color: #8894b5;
   letter-spacing: 1.2px;
 }
 
-nav .sub-menu .bottom li {
+nav .subMenu .bottom li {
   margin: 40px 0 0px 0;
 }
 
 main {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
-  width: 70%;
-  height: 80%;
+  width: 80%;
+  height: 100%;
   background-color: #ffffff;
-  border-radius: 35px;
-  padding: 50px 50px;
+  border-radius: 35px 0 0 35px;
+  padding: 50px 40px;
 }
 
 main::before {
@@ -184,7 +196,12 @@ main::before {
   z-index: -1;
 }
 
-main .section-arrow {
+main .container {
+  width: 100%;
+  height: 100%;
+}
+
+main .sectionArrow {
   position: absolute;
   left: -14px;
   top: 105px;
@@ -197,6 +214,7 @@ main .top {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 main .top .active-menu {
@@ -255,5 +273,143 @@ main .top .bar .search-bar {
 
 main .top .bar .search-bar span {
   font-size: 0.9rem;
+}
+
+main .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+main .middle .project {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 5;
+      -ms-flex-positive: 5;
+          flex-grow: 5;
+  margin-right: 40px;
+  height: 230px;
+  border: 3px solid #e6e9f4;
+  border-radius: 60px;
+  background-color: #f4f6fd;
+}
+
+main .middle .project .pIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  position: relative;
+  bottom: 40px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .middle .project .pIcon .iconContainerLeft {
+  height: 72px;
+  width: 72px;
+  border-radius: 27px;
+  background-color: #ff48ee;
+  -webkit-box-shadow: 0px 25px 32px 3px #ff48ee5e;
+}
+
+main .middle .project .pIcon .iconContainerRight {
+  height: 72px;
+  width: 72px;
+  border-radius: 27px;
+  background-color: #6171ff;
+  -webkit-box-shadow: 0px 25px 32px 3px #6171ff5e;
+}
+
+main .middle .project .projectContainer {
+  position: relative;
+  width: 100%;
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 35px;
+}
+
+main .middle .project .projectContainer .users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+main .middle .project .projectContainer .users .user-pic1 {
+  background-image: url("../img/user-1.jpg");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+main .middle .project .projectContainer .users .user-pic2 {
+  background-image: url("../img/user-2.jpg");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 10px;
+  z-index: 2;
+}
+
+main .middle .project .projectContainer .users .user-pic3 {
+  background-image: url("../img/user-3.jpg");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  right: 20px;
+  z-index: 3;
+}
+
+main .middle .project .projectContainer .more {
+  position: relative;
+  bottom: 10px;
+}
+
+main .middle .project .pName {
+  width: 100%;
+  padding: 0 50px;
+}
+
+main .middle .project .pName h3 {
+  font-size: 1.5rem;
+  color: #2c3550;
+}
+
+main .middle .project .pName span {
+  font-size: 0.7rem;
+  color: #8894b5;
+  letter-spacing: 1.4px;
+}
+
+main .middle .addProject {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 230px;
+  width: 90px;
+  border: 3px solid #e6e9f4;
+  border-radius: 60px;
 }
 /*# sourceMappingURL=main.css.map */

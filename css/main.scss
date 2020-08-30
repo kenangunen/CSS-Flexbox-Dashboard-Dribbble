@@ -6,12 +6,17 @@ $border: #e6e9f4;
 $pink: #ff48ee;
 $black: #2c3550;
 $gray: #8894b5;
+$blue: #6171ff;
+$transparent-pink: #ff48ee5e;
+$transparent-blue: #6171ff5e;
 
 // Sizes
-$dashboard-height: 80%;
 $bar-btn-height: 55px;
 $bar-btn-width: 55px;
 $btn-raidus: 14px;
+$icon-container-height: 72px;
+$icon-container-width: 72px;
+$icon-container-radius: 27px;
 
 // Fonts
 $font-family-logo: 'Libre Baskerville', serif;
@@ -19,8 +24,11 @@ $font-family-body: 'Roboto', sans-serif;
 
 // Other spacing
 $main-border: 1px solid $border;
-$border-radius: 35px;
-$padding: 50px 50px;
+$project-box-border: 3px solid $border;
+$project-padding: 0 50px;
+$radius: 35px;
+$border-radius: $radius 0 0 $radius;
+$padding: 50px 40px;
 $margin-bottom-nav: 0 0 40px 0;
 $margin-top-nav: 40px 0 0px 0;
 
@@ -49,26 +57,37 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.profileImg {
+@mixin profilPhoto($img) {
+  background-image: url($img);
+  background-size: contain;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-
 .allBtn {
   outline: none;
   border: none;
 }
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin iconBox($backgorundColor, $shadowColor) {
+  height: $icon-container-height;
+  width: $icon-container-width;
+  border-radius: $icon-container-radius;
+  background-color: $backgorundColor;
+  @extend .flexCenter;
+  -webkit-box-shadow: 0px 25px 32px 3px $shadowColor;
+}
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 20%;
-  height: $dashboard-height;
+  height: 100%;
   background-color: $secondary;
-  border-top-left-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
   padding: $padding;
 
   .menu {
@@ -76,7 +95,7 @@ nav {
     position: relative;
     justify-content: space-between;
     align-items: flex-start;
-    width: 25%;
+    width: 20%;
     height: 100%;
     .top {
       @extend .flexColmn;
@@ -93,10 +112,10 @@ nav {
         &::before {
           content: '';
           position: absolute;
-          bottom: 40px;
-          right: 102px;
+          bottom: 39px;
+          right: 91px;
           display: block;
-          width: 3px;
+          width: 4px;
           background: $pink;
           height: 3.5rem;
         }
@@ -130,19 +149,19 @@ nav {
     .bottom {
       @extend .flexColmn;
 
-      .profil-pic {
-        @extend .profileImg;
-        background-color: $pink;
+      .user-pic {
+        @include profilPhoto('../img/user-1.jpg');
         margin-bottom: 1.6rem;
       }
     }
   }
   .block {
+    margin-right: 20px;
     border: $main-border;
     width: 0;
     height: 100%;
   }
-  .sub-menu {
+  .subMenu {
     @extend .flexColmn;
     justify-content: space-between;
     width: 60%;
@@ -171,13 +190,13 @@ nav {
 }
 
 main {
+  justify-content: space-between;
   position: relative;
-  width: 70%;
-  height: $dashboard-height;
+  width: 80%;
+  height: 100%;
   background-color: $primary;
   border-radius: $border-radius;
   padding: $padding;
-
   &::before {
     content: '';
     position: absolute;
@@ -189,16 +208,21 @@ main {
     height: 100%;
     z-index: -1;
   }
+  .container {
+    @extend .flexColmn;
+    width: 100%;
+    height: 100%;
+  }
 
-  .section-arrow {
+  .sectionArrow {
     position: absolute;
     left: -14px;
     top: 105px;
   }
-
   .top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 60px;
     .active-menu {
       margin-top: 30px;
       span {
@@ -235,13 +259,99 @@ main {
         color: $gray;
         background-color: $secondary;
         height: $bar-btn-height;
-        border-radius: $border-radius;
+        border-radius: $radius;
         background-color: $secondary;
         width: 275px;
         span {
           font-size: 0.9rem;
         }
       }
+    }
+  }
+  .middle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .project {
+      @extend .flexColmn;
+      justify-content: flex-start;
+      position: relative;
+      align-items: center;
+      flex-grow: 5;
+      margin-right: 40px;
+      height: 230px;
+      border: $project-box-border;
+      border-radius: 60px;
+      background-color: $secondary;
+      .pIcon {
+        display: flex;
+        width: 70%;
+        position: relative;
+        bottom: 40px;
+        justify-content: flex-end;
+        .iconContainerLeft {
+          @include iconBox($pink, $transparent-pink);
+        }
+        .iconContainerRight {
+          @include iconBox($blue, $transparent-blue);
+        }
+      }
+      .projectContainer {
+        position: relative;
+        width: 100%;
+        padding: $project-padding;
+        display: flex;
+        justify-content: space-between;
+        bottom: 35px;
+
+        .users {
+          display: flex;
+          position: relative;
+
+          .user-pic1 {
+            @include profilPhoto('../img/user-1.jpg');
+            z-index: 1;
+          }
+          .user-pic2 {
+            @include profilPhoto('../img/user-2.jpg');
+            position: relative;
+            right: 10px;
+            z-index: 2;
+          }
+          .user-pic3 {
+            @include profilPhoto('../img/user-3.jpg');
+            position: relative;
+            right: 20px;
+            z-index: 3;
+          }
+        }
+        .more {
+          position: relative;
+          bottom: 10px;
+        }
+      }
+      .pName {
+        width: 100%;
+        padding: $project-padding;
+        h3 {
+          font-size: 1.5rem;
+          color: $black;
+        }
+        span {
+          font-size: 0.7rem;
+          color: $gray;
+          letter-spacing: 1.4px;
+        }
+      }
+    }
+    .addProject {
+      flex-grow: 1;
+      height: 230px;
+      width: 90px;
+      border: $project-box-border;
+      border-radius: 60px;
+      @extend .flexCenter;
     }
   }
 }
