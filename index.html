@@ -14,7 +14,7 @@
     <header></header>
     <nav>
       <div class="menu">
-        <div class="top">
+        <div class="mTop">
           <object
             type="image/svg+xml"
             data="./img/menu-icon.svg"
@@ -27,7 +27,7 @@
             <span class="dot">.</span>
           </div>
         </div>
-        <div class="middle">
+        <div class="mMiddle">
           <object type="image/svg+xml" data="./img/notification.svg">
             <p class="no-support">Your browser does not support SVG!</p>
           </object>
@@ -38,7 +38,7 @@
             <p class="no-support">Your browser does not support SVG!</p>
           </object>
         </div>
-        <div class="bottom">
+        <div class="mBottom">
           <div class="user-pic"></div>
           <object type="image/svg+xml" data="./img/setting.svg">
             <p class="no-support">Your browser does not support SVG!</p>
@@ -47,7 +47,7 @@
       </div>
       <div class="block"></div>
       <div class="subMenu">
-        <div class="top">
+        <div class="sTop">
           <ul>
             <li>Dashboard</li>
             <li class="selected">Project</li>
@@ -56,7 +56,7 @@
             <li>Settings</li>
           </ul>
         </div>
-        <div class="bottom">
+        <div class="sBottom">
           <ul>
             <li>Commercial Request</li>
             <li>Marketting</li>
@@ -75,27 +75,27 @@
         <p class="no-support">Your browser does not support SVG!</p>
       </object>
       <div class="container">
-        <div class="top">
+        <div class="headerSection">
           <div class="active-menu">
             <span>dh</span>
             <h2>Projects</h2>
           </div>
           <div class="bar">
-            <div class="user-btn">
+            <div class="main-btn">
               <button>
                 <object type="image/svg+xml" data="./img/user-profile.svg">
                   <p class="no-support">Your browser does not support SVG!</p>
                 </object>
               </button>
             </div>
-            <div class="user-btn">
+            <div class="main-btn">
               <button>
                 <object type="image/svg+xml" data="./img/headphone.svg">
                   <p class="no-support">Your browser does not support SVG!</p>
                 </object>
               </button>
             </div>
-            <div class="user-btn">
+            <div class="main-btn">
               <button>
                 <object type="image/svg+xml" data="./img/disk.svg">
                   <p class="no-support">Your browser does not support SVG!</p>
@@ -110,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="middle">
+        <div class="projectSection">
           <div class="project">
             <div class="pIcon">
               <div class="iconContainerLeft">
@@ -131,9 +131,9 @@
             </div>
             <div class="projectContainer">
               <div class="users">
-                <div class="user-pic1"></div>
-                <div class="user-pic2"></div>
-                <div class="user-pic3"></div>
+                <div class="projectWorker-1"></div>
+                <div class="projectWorker-2" title="r10"></div>
+                <div class="projectWorker-3" title="r20"></div>
               </div>
               <div class="more">
                 <object type="image/svg+xml" data="./img/more.svg">
@@ -193,8 +193,391 @@
             </svg>
           </div>
         </div>
-        <div class="bottom"></div>
+        <div class="taskSection">
+          <table>
+            <tr class="tableHad">
+             
+                <th>
+                  <object type="image/svg+xml" data="./img/flag.svg">
+                    <p class="no-support">
+                      Your browser does not support SVG!
+                    </p></object
+                  ><span>Due date</span>
+                </th>
+                <th><span>Title</span></th>
+                <th><span>Status</span></th>
+                <th><span>Assignee</span></th>
+              </thead>
+            </tr>          
+            <tr class="row">
+              <td class="column1">
+                <div class="dueDate">
+                  <div class="greenOrder">
+                    <svg
+                      width="8"
+                      height="6"
+                      viewBox="0 0 8 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="deneme"
+                    >
+                      <path d="M0 4V6H8V4L4 0L0 4Z" fill="#0da03b" />
+                    </svg>
+                  </div>
+                  <span>14 Dec 2020</span>
+                </div>
+              </td>
+              <td class="column2">
+                <div class="taskTitle">
+                  <div class="purpleTaskType">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1H8M3 5H7M2 9H10"
+                        stroke="white"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <span>Implement new UX</span>
+                </div>
+              </td>
+              <td class="column3">
+                <div class="status" title="backlog">
+                  <span>BACKLOG</span>
+                </div>
+              </td>
+              <td class="column4">
+                <div class="assignee">
+                  <div class="projectWorker-2"></div>
+                  <span>Alejandro Wells</span>
+                </div>
+              </td>
+              <td class="column5">
+                <div class="moreInfo">
+                  <svg
+                    width="4"
+                    height="16"
+                    viewBox="0 0 4 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 2C4 0.895431 3.10457 0 2 0V0C0.895431 0 0 0.895431 0 2V2C0 3.10457 0.895431 4 2 4V4C3.10457 4 4 3.10457 4 2V2Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 8C4 6.89543 3.10457 6 2 6V6C0.895431 6 0 6.89543 0 8V8C0 9.10457 0.895431 10 2 10V10C3.10457 10 4 9.10457 4 8V8Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 14C4 12.8954 3.10457 12 2 12V12C0.895431 12 0 12.8954 0 14V14C0 15.1046 0.895431 16 2 16V16C3.10457 16 4 15.1046 4 14V14Z"
+                      fill="#8894B5"
+                    />
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="row">
+              <td class="column1">
+                <div class="dueDate">
+                  <div class="orangeOrder">
+                    <svg
+                      width="8"
+                      height="6"
+                      viewBox="0 0 8 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="deneme"
+                    >
+                      <path d="M0 4V6H8V4L4 0L0 4Z" fill="#FF9A00" />
+                    </svg>
+                  </div>
+                  <span>02 June 2020</span>
+                </div>
+              </td>
+              <td class="column2">
+                <div class="taskTitle">
+                  <div class="pinkTaskType">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1H8M3 5H7M2 9H10"
+                        stroke="white"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <span>Design syntax</span>
+                </div>
+              </td>
+              <td class="column3">
+                <div class="status" title="inProgress">
+                  <span>IN PROGRESS</span>
+                </div>
+              </td>             
+              <td class="column4">
+                <div class="assignee">
+                  <div class="projectWorker-3"></div>
+                  <span>Lenora Sandoval</span>
+                </div>
+              </td>
+              <td class="column5">
+                <div class="moreInfo">
+                  <svg
+                    width="4"
+                    height="16"
+                    viewBox="0 0 4 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 2C4 0.895431 3.10457 0 2 0V0C0.895431 0 0 0.895431 0 2V2C0 3.10457 0.895431 4 2 4V4C3.10457 4 4 3.10457 4 2V2Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 8C4 6.89543 3.10457 6 2 6V6C0.895431 6 0 6.89543 0 8V8C0 9.10457 0.895431 10 2 10V10C3.10457 10 4 9.10457 4 8V8Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 14C4 12.8954 3.10457 12 2 12V12C0.895431 12 0 12.8954 0 14V14C0 15.1046 0.895431 16 2 16V16C3.10457 16 4 15.1046 4 14V14Z"
+                      fill="#8894B5"
+                    />
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="row">
+              <td class="column1">
+                <div class="dueDate">
+                  <div class="redOrder">
+                    <svg
+                      width="8"
+                      height="6"
+                      viewBox="0 0 8 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="deneme"
+                    >
+                      <path d="M0 4V6H8V4L4 0L0 4Z" fill="#ff1c1c" />
+                    </svg>
+                  </div>
+                  <span>31 Jul 2020</span>
+                </div>
+              </td>
+              <td class="column2">
+                <div class="taskTitle">
+                  <div class="pinkTaskType">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1H8M3 5H7M2 9H10"
+                        stroke="white"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <span>Configurable resources</span>
+                </div>
+              </td>
+              <td class="column3">
+                <div class="status" title="done">
+                  <span>DONE</span>
+                </div>
+              </td>
+              <td class="column4">
+                <div class="assignee">
+                  <div class="projectWorker-1"></div>
+                  <span>Calvin Garett</span>
+                </div>
+              </td>
+              <td class="column5">
+                <div class="moreInfo">
+                  <svg
+                    width="4"
+                    height="16"
+                    viewBox="0 0 4 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 2C4 0.895431 3.10457 0 2 0V0C0.895431 0 0 0.895431 0 2V2C0 3.10457 0.895431 4 2 4V4C3.10457 4 4 3.10457 4 2V2Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 8C4 6.89543 3.10457 6 2 6V6C0.895431 6 0 6.89543 0 8V8C0 9.10457 0.895431 10 2 10V10C3.10457 10 4 9.10457 4 8V8Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 14C4 12.8954 3.10457 12 2 12V12C0.895431 12 0 12.8954 0 14V14C0 15.1046 0.895431 16 2 16V16C3.10457 16 4 15.1046 4 14V14Z"
+                      fill="#8894B5"
+                    />
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="row">
+              <td class="column1">
+                <div class="dueDate">
+                  <div class="orangeOrder">
+                    <svg
+                      width="8"
+                      height="6"
+                      viewBox="0 0 8 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="deneme"
+                    >
+                      <path d="M0 4V6H8V4L4 0L0 4Z" fill="#FF9A00" />
+                    </svg>
+                  </div>
+                  <span>17 Feb 2020</span>
+                </div>
+              </td>
+              <td class="column2">
+                <div class="taskTitle">
+                  <div class="pinkTaskType">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1H8M3 5H7M2 9H10"
+                        stroke="white"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <span>Implement extensions</span>
+                </div>
+              </td>
+              <td class="column3">
+                <div class="status" title="backlog">
+                  <span>BACKLOG</span>
+                </div>
+              </td>
+              <td class="column4">
+                <div class="assignee">
+                  <div class="projectWorker-4"></div>
+                  <span>Florence Guzman</span>
+                </div>
+              </td>
+              <td class="column5">
+                <div class="moreInfo">
+                  <svg
+                    width="4"
+                    height="16"
+                    viewBox="0 0 4 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 2C4 0.895431 3.10457 0 2 0V0C0.895431 0 0 0.895431 0 2V2C0 3.10457 0.895431 4 2 4V4C3.10457 4 4 3.10457 4 2V2Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 8C4 6.89543 3.10457 6 2 6V6C0.895431 6 0 6.89543 0 8V8C0 9.10457 0.895431 10 2 10V10C3.10457 10 4 9.10457 4 8V8Z"
+                      fill="#8894B5"
+                    />
+                    <path
+                      d="M4 14C4 12.8954 3.10457 12 2 12V12C0.895431 12 0 12.8954 0 14V14C0 15.1046 0.895431 16 2 16V16C3.10457 16 4 15.1046 4 14V14Z"
+                      fill="#8894B5"
+                    />
+                  </svg>
+                </div>
+              </td>
+            </tr>          
+          </table>
+        </div>
       </div>
     </main>
   </body>
 </html>
+
+<!-- <div class="tableHad">
+  <object type="image/svg+xml" data="./img/flag.svg">
+    <p class="no-support">Your browser does not support SVG!</p>
+  </object>
+  <span>Due date</span>
+  <span>Title</span>
+  <span>Status</span>
+  <span>Assignee</span>
+</div>
+<div class="tableRow">
+  <div class="dueDate">
+    <div class="order">
+      <svg
+        width="8"
+        height="6"
+        viewBox="0 0 8 6"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="deneme"
+      >
+        <path d="M0 4V6H8V4L4 0L0 4Z" fill="#FF9A00" />
+      </svg>
+    </div>
+    <span>14 Dec 2020</span>
+  </div>
+  <div class="taskTitle">
+    <div class="taskType">
+      <svg
+        width="10"
+        height="10"
+        viewBox="0 0 10 10"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 1H8M3 5H7M2 9H10" stroke="white" stroke-width="2" />
+      </svg>
+    </div>
+    <span>Implement new UX</span>
+  </div>
+  <div class="status backlog">
+    <span>BACKLOG</span>
+  </div>
+  <div class="assignee">
+    <div class="user-pic1"></div>
+    <span>Alejandro Wells</span>
+  </div>
+  <div class="moreInfo">
+    <svg
+      width="4"
+      height="16"
+      viewBox="0 0 4 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 2C4 0.895431 3.10457 0 2 0V0C0.895431 0 0 0.895431 0 2V2C0 3.10457 0.895431 4 2 4V4C3.10457 4 4 3.10457 4 2V2Z"
+        fill="#8894B5"
+      />
+      <path
+        d="M4 8C4 6.89543 3.10457 6 2 6V6C0.895431 6 0 6.89543 0 8V8C0 9.10457 0.895431 10 2 10V10C3.10457 10 4 9.10457 4 8V8Z"
+        fill="#8894B5"
+      />
+      <path
+        d="M4 14C4 12.8954 3.10457 12 2 12V12C0.895431 12 0 12.8954 0 14V14C0 15.1046 0.895431 16 2 16V16C3.10457 16 4 15.1046 4 14V14Z"
+        fill="#8894B5"
+      />
+    </svg>
+  </div>
+</div> -->

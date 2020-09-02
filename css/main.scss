@@ -9,10 +9,20 @@ $gray: #8894b5;
 $blue: #6171ff;
 $transparent-pink: #ff48ee5e;
 $transparent-blue: #6171ff5e;
+$main-border-color: #f1f4fb;
+$table-color-1: #0da03b;
+$table-color-2: #ff1c1c;
+$table-color-3: #207cff;
+$table-bg-color-1: #f6e8d7;
+$table-bg-color-2: #cfffde;
+$table-bg-color-3: #f6d1d7;
+$table-bg-color-4: #fff0d9;
+$table-bg-color-5: #9646ff;
+$table-bg-color-6: #d1e4ff;
+$table-bg-color-7: #d8ddef;
 
 // Sizes
-$bar-btn-height: 55px;
-$bar-btn-width: 55px;
+$main-btn-size: 55px;
 $btn-raidus: 14px;
 $icon-container-height: 72px;
 $icon-container-width: 72px;
@@ -22,15 +32,37 @@ $icon-container-radius: 27px;
 $font-family-logo: 'Libre Baskerville', serif;
 $font-family-body: 'Roboto', sans-serif;
 
+$font-size: 1.25rem;
+$font-size-l: 2rem; //32px
+$font-size-m: 0.8rem;
+$font-size-s: 0.7rem;
+
 // Other spacing
 $main-border: 1px solid $border;
 $project-box-border: 3px solid $border;
 $project-padding: 0 50px;
-$radius: 35px;
-$border-radius: $radius 0 0 $radius;
+
+$radius-l: 3em;
+$radius-m: 1.7em;
+$radius-ms: 1.2em;
+$raidus-s: 0.6em;
+$radius-left-side: $radius-ms 0 0 $radius-ms;
+$radius-left-side-xl: $radius-l 0 0 $radius-l;
+$radius-right-side: 0 $radius-ms $radius-ms 0;
+
 $padding: 50px 40px;
-$margin-bottom-nav: 0 0 40px 0;
-$margin-top-nav: 40px 0 0px 0;
+
+$spacing-xxl: 4.5em; //90px
+$spacing-xl: 3em; //60px
+$spacing-l: 2em; //40px
+$spacing-m: 1.75em; //35px
+$spacing-ms: 1.6em; //32px
+$spacing-mxs: 1.5em; //30px
+$spacing-mxxs: 1.25em; //25px
+$spacing-s: 1em; // 20px
+$spacing-xs: 0.7em; //14px
+$spacing-xss: 0.5em; //10px
+$spacing-xxxs: 0.2em; //4px
 
 * {
   box-sizing: border-box;
@@ -39,7 +71,7 @@ $margin-top-nav: 40px 0 0px 0;
   list-style: none;
 }
 html {
-  font-size: 20px;
+  font-size: $font-size;
   font-family: $font-family-body;
 }
 
@@ -53,16 +85,10 @@ body {
   background-color: $bg-color;
 }
 
+//extend
 .flexColmn {
   display: flex;
   flex-direction: column;
-}
-@mixin profilPhoto($img) {
-  background-image: url($img);
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
 }
 .allBtn {
   outline: none;
@@ -73,6 +99,33 @@ body {
   align-items: center;
   justify-content: center;
 }
+.orderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 15px;
+  margin-right: $spacing-m;
+}
+.titleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 15px;
+  margin-right: $spacing-m;
+}
+
+//mixins
+@mixin profilPhoto($img) {
+  background-image: url($img);
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 @mixin iconBox($backgorundColor, $shadowColor) {
   height: $icon-container-height;
   width: $icon-container-width;
@@ -80,6 +133,31 @@ body {
   background-color: $backgorundColor;
   @extend .flexCenter;
   -webkit-box-shadow: 0px 25px 32px 3px $shadowColor;
+}
+@mixin tableBox($backgroundColor) {
+}
+
+.projectWorker-1 {
+  @include profilPhoto('../img/user-1.jpg');
+}
+.projectWorker-2 {
+  @include profilPhoto('../img/user-2.jpg');
+  &[title='r10'] {
+    position: relative;
+    right: 10px;
+    z-index: 2;
+  }
+}
+.projectWorker-3 {
+  @include profilPhoto('../img/user-3.jpg');
+  &[title='r20'] {
+    position: relative;
+    right: 20px;
+    z-index: 3;
+  }
+}
+.projectWorker-4 {
+  @include profilPhoto('../img/user-4.jpg');
 }
 
 nav {
@@ -97,66 +175,65 @@ nav {
     align-items: flex-start;
     width: 20%;
     height: 100%;
-    .top {
+    .mTop {
       @extend .flexColmn;
 
       .menu-icon {
-        margin: $margin-bottom-nav;
+        margin-bottom: $spacing-l;
       }
       .textLogo {
         @extend .flexColmn;
         position: relative;
         font-family: $font-family-logo;
-
         font-weight: 700;
         &::before {
           content: '';
           position: absolute;
-          bottom: 39px;
-          right: 91px;
+          bottom: $spacing-l;
+          right: $spacing-xxl;
           display: block;
-          width: 4px;
+          width: $spacing-xxxs;
           background: $pink;
           height: 3.5rem;
         }
         .text {
           position: relative;
-          letter-spacing: -1.2px;
-          right: 10px;
-          font-size: 2rem;
+          letter-spacing: -0.051rem;
+          right: 0.5rem;
+          font-size: $font-size-l;
           align-self: flex-start;
           transform: rotate(90deg);
           color: $black;
         }
         .dot {
           position: relative;
-          right: 1px;
-          bottom: 25px;
+          right: 0.05rem;
+          bottom: 1.25rem;
           color: $pink;
-          font-size: 2.3rem;
+          font-size: $font-size-l;
         }
       }
     }
-    .middle {
+    .mMiddle {
       @extend .flexColmn;
       position: relative;
-      bottom: 90px;
+      bottom: $spacing-xxl;
 
       object {
-        margin: $margin-bottom-nav;
+        margin-bottom: $spacing-l;
       }
     }
-    .bottom {
+    .mBottom {
       @extend .flexColmn;
 
       .user-pic {
         @include profilPhoto('../img/user-1.jpg');
-        margin-bottom: 1.6rem;
+        margin-bottom: 1.6em;
       }
     }
   }
   .block {
-    margin-right: 20px;
+    margin-right: 1em;
     border: $main-border;
     width: 0;
     height: 100%;
@@ -166,192 +243,306 @@ nav {
     justify-content: space-between;
     width: 60%;
     height: 100%;
-    font-size: 0.9rem;
+    font-size: $font-size-m;
 
-    .top {
+    .sTop {
       li {
-        margin: $margin-bottom-nav;
+        margin-bottom: $spacing-l;
       }
       .selected {
         color: $pink;
       }
     }
-    .bottom {
+    .sBottom {
       li:first-child {
-        font-size: 0.7rem;
+        font-size: $font-size-s;
         color: $gray;
-        letter-spacing: 1.2px;
+        letter-spacing: 0.09em;
       }
       li {
-        margin: $margin-top-nav;
+        margin-top: $spacing-l;
       }
     }
   }
 }
 
 main {
-  justify-content: space-between;
   position: relative;
   width: 80%;
   height: 100%;
   background-color: $primary;
-  border-radius: $border-radius;
+  border-radius: $radius-left-side-xl;
   padding: $padding;
   &::before {
     content: '';
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0em;
+    left: 0em;
     display: block;
-    width: 40px;
+    width: 2em;
     background: $secondary;
     height: 100%;
     z-index: -1;
+  }
+  .sectionArrow {
+    position: absolute;
+    left: -$spacing-xs;
+    top: $spacing-xxl;
   }
   .container {
     @extend .flexColmn;
     width: 100%;
     height: 100%;
-  }
 
-  .sectionArrow {
-    position: absolute;
-    left: -14px;
-    top: 105px;
-  }
-  .top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    .active-menu {
-      margin-top: 30px;
-      span {
-        color: $gray;
-        font-size: 1.5rem;
-        font-family: $font-family-logo;
-        margin-bottom: 20px;
-      }
-      h2 {
-        color: $black;
-        font-size: 3.2rem;
-        letter-spacing: -2px;
-      }
-    }
-    .bar {
+    .headerSection {
       display: flex;
-
-      .user-btn {
-        margin-left: 12px;
-        button {
-          @extend .allBtn;
-          height: $bar-btn-height;
-          width: $bar-btn-width;
-          border-radius: $btn-raidus;
-          background-color: $secondary;
-        }
-      }
-      .search-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 25px;
-        margin-left: 30px;
-        color: $gray;
-        background-color: $secondary;
-        height: $bar-btn-height;
-        border-radius: $radius;
-        background-color: $secondary;
-        width: 275px;
+      justify-content: space-between;
+      margin-bottom: $spacing-l;
+      .active-menu {
+        margin-top: $spacing-mxs;
         span {
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
-  .middle {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    .project {
-      @extend .flexColmn;
-      justify-content: flex-start;
-      position: relative;
-      align-items: center;
-      flex-grow: 5;
-      margin-right: 40px;
-      height: 230px;
-      border: $project-box-border;
-      border-radius: 60px;
-      background-color: $secondary;
-      .pIcon {
-        display: flex;
-        width: 70%;
-        position: relative;
-        bottom: 40px;
-        justify-content: flex-end;
-        .iconContainerLeft {
-          @include iconBox($pink, $transparent-pink);
-        }
-        .iconContainerRight {
-          @include iconBox($blue, $transparent-blue);
-        }
-      }
-      .projectContainer {
-        position: relative;
-        width: 100%;
-        padding: $project-padding;
-        display: flex;
-        justify-content: space-between;
-        bottom: 35px;
-
-        .users {
-          display: flex;
-          position: relative;
-
-          .user-pic1 {
-            @include profilPhoto('../img/user-1.jpg');
-            z-index: 1;
-          }
-          .user-pic2 {
-            @include profilPhoto('../img/user-2.jpg');
-            position: relative;
-            right: 10px;
-            z-index: 2;
-          }
-          .user-pic3 {
-            @include profilPhoto('../img/user-3.jpg');
-            position: relative;
-            right: 20px;
-            z-index: 3;
-          }
-        }
-        .more {
-          position: relative;
-          bottom: 10px;
-        }
-      }
-      .pName {
-        width: 100%;
-        padding: $project-padding;
-        h3 {
-          font-size: 1.5rem;
-          color: $black;
-        }
-        span {
-          font-size: 0.7rem;
           color: $gray;
-          letter-spacing: 1.4px;
+          font-size: 1.5rem;
+          font-family: $font-family-logo;
+        }
+        h2 {
+          color: $black;
+          font-size: 3.2rem;
+          letter-spacing: -0.032em;
+        }
+      }
+      .bar {
+        display: flex;
+
+        .main-btn {
+          margin-left: $spacing-xs;
+          button {
+            @extend .allBtn;
+            height: $main-btn-size;
+            width: $main-btn-size;
+            border-radius: $btn-raidus;
+            background-color: $secondary;
+          }
+        }
+        .search-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 $spacing-mxxs;
+          margin-left: $spacing-mxs;
+          color: $gray;
+          background-color: $secondary;
+          height: $main-btn-size;
+          border-radius: $radius-m;
+          background-color: $secondary;
+          width: 14em;
+          span {
+            font-size: 0.9rem;
+          }
         }
       }
     }
-    .addProject {
-      flex-grow: 1;
-      height: 230px;
-      width: 90px;
-      border: $project-box-border;
-      border-radius: 60px;
-      @extend .flexCenter;
+    .projectSection {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: $spacing-l;
+      border-bottom: 2px solid $main-border-color;
+
+      .project {
+        @extend .flexColmn;
+        justify-content: flex-start;
+        align-items: center;
+        flex-grow: 5;
+        position: relative;
+        margin-right: $spacing-xl;
+        height: 10.5em;
+        border: $project-box-border;
+        border-radius: $spacing-xl;
+        background-color: $secondary;
+        .pIcon {
+          display: flex;
+          width: 70%;
+          position: relative;
+          bottom: $spacing-l;
+          justify-content: flex-end;
+
+          ///burada kaldın
+
+          .iconContainerLeft {
+            @include iconBox($pink, $transparent-pink);
+          }
+          .iconContainerRight {
+            @include iconBox($blue, $transparent-blue);
+          }
+        }
+        .projectContainer {
+          position: relative;
+          width: 100%;
+          padding: $project-padding;
+          display: flex;
+          justify-content: space-between;
+          bottom: $spacing-m;
+
+          .users {
+            display: flex;
+            position: relative;
+          }
+          .more {
+            position: relative;
+            bottom: $spacing-xss;
+          }
+        }
+        .pName {
+          width: 100%;
+          padding: $project-padding;
+          h3 {
+            font-size: 1.5rem;
+            color: $black;
+          }
+          span {
+            font-size: 0.7rem;
+            color: $gray;
+            letter-spacing: 1.4px;
+          }
+        }
+      }
+      .addProject {
+        flex-grow: 1;
+        height: 230px;
+        width: 90px;
+        border: $project-box-border;
+        border-radius: $radius-l;
+        @extend .flexCenter;
+      }
+    }
+    .taskSection {
+      width: 100%;
+      padding-top: $spacing-xl;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+          padding-bottom: 20px;
+        }
+        td {
+          height: 65px;
+        }
+
+        th {
+          text-align: left;
+          padding-left: 5px;
+          &:first-child {
+            padding-left: 25px;
+            object {
+              margin-right: 35px;
+            }
+          }
+        }
+
+        .row {
+          font-size: 0.8rem;
+
+          td:first-child {
+            border-radius: $radius-left-side;
+            padding-left: $spacing-s;
+          }
+          td:last-child {
+            border-radius: $radius-right-side;
+          }
+          .column1,
+          .column4 {
+            width: 350px;
+          }
+          .column2 {
+            width: 400px;
+          }
+          .column3 {
+            width: 250px;
+            text-align: left;
+          }
+        }
+
+        tr:nth-child(even) {
+          background-color: $secondary;
+          padding: $spacing-s;
+        }
+      }
+      .tableHad {
+        width: 100%;
+        font-size: 0.7rem;
+        color: $gray;
+        letter-spacing: 1.4px;
+      }
+      .dueDate {
+        display: flex;
+        align-items: center;
+        color: $black;
+        letter-spacing: 1.2px;
+        .orangeOrder {
+          @extend .orderBox;
+          background-color: $table-bg-color-1;
+        }
+        .greenOrder {
+          @extend .orderBox;
+          background-color: $table-bg-color-2;
+        }
+        .redOrder {
+          @extend .orderBox;
+          background-color: $table-bg-color-3;
+        }
+      }
+      .taskTitle {
+        display: flex;
+        align-items: center;
+        color: $black;
+
+        .pinkTaskType {
+          @extend .titleBox;
+          background-color: $pink;
+        }
+        .purpleTaskType {
+          @extend .titleBox;
+          background-color: $table-bg-color-5;
+        }
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        display: inherit;
+        padding: $spacing-xs;
+        font-size: 0.65rem;
+
+        &[title='backlog'] {
+          background-color: $table-bg-color-7;
+          color: $gray;
+        }
+        &[title='inProgress'] {
+          background-color: $table-bg-color-6;
+          color: $table-color-3;
+        }
+        &[title='done'] {
+          background-color: $table-bg-color-2;
+          color: $table-color-1;
+        }
+      }
+      .assignee {
+        display: flex;
+        align-items: center;
+        color: $black;
+
+        span {
+          margin-left: $spacing-s;
+        }
+      }
+      .moreInfo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }
