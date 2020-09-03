@@ -1,48 +1,43 @@
 // Color
 $primary: #ffffff;
 $secondary: #f4f6fd;
-$bg-color: #e4e9f8;
 $border: #e6e9f4;
 $pink: #ff48ee;
 $black: #2c3550;
 $gray: #8894b5;
 $blue: #6171ff;
+$green: #0da03b;
+$red: #ff1c1c;
 $transparent-pink: #ff48ee5e;
 $transparent-blue: #6171ff5e;
 $main-border-color: #f1f4fb;
-$table-color-1: #0da03b;
-$table-color-2: #ff1c1c;
-$table-color-3: #207cff;
 $table-bg-color-1: #f6e8d7;
 $table-bg-color-2: #cfffde;
 $table-bg-color-3: #f6d1d7;
-$table-bg-color-4: #fff0d9;
 $table-bg-color-5: #9646ff;
 $table-bg-color-6: #d1e4ff;
 $table-bg-color-7: #d8ddef;
 
 // Sizes
 $main-btn-size: 55px;
-$btn-raidus: 14px;
-$icon-container-height: 72px;
-$icon-container-width: 72px;
-$icon-container-radius: 27px;
+$icon-container-size: 72px;
 
 // Fonts
 $font-family-logo: 'Libre Baskerville', serif;
 $font-family-body: 'Roboto', sans-serif;
-
 $font-size: 1.25rem;
-$font-size-l: 2rem; //32px
+$font-size-l: 2rem;
 $font-size-m: 0.8rem;
 $font-size-s: 0.7rem;
+$font-size-xs: 0.6rem;
 
 // Other spacing
 $main-border: 1px solid $border;
 $project-box-border: 3px solid $border;
-$project-padding: 0 50px;
 
+//radius
 $radius-l: 3em;
+$radius-ls: 2.7em;
 $radius-m: 1.7em;
 $radius-ms: 1.2em;
 $raidus-s: 0.6em;
@@ -50,19 +45,21 @@ $radius-left-side: $radius-ms 0 0 $radius-ms;
 $radius-left-side-xl: $radius-l 0 0 $radius-l;
 $radius-right-side: 0 $radius-ms $radius-ms 0;
 
-$padding: 50px 40px;
-
-$spacing-xxl: 4.5em; //90px
-$spacing-xl: 3em; //60px
-$spacing-l: 2em; //40px
-$spacing-m: 1.75em; //35px
-$spacing-ms: 1.6em; //32px
-$spacing-mxs: 1.5em; //30px
-$spacing-mxxs: 1.25em; //25px
-$spacing-s: 1em; // 20px
-$spacing-xs: 0.7em; //14px
-$spacing-xss: 0.5em; //10px
-$spacing-xxxs: 0.2em; //4px
+//Spacing
+$spacing-xxxl: 4.5em;
+$spacing-xxl: 3em;
+$spacing-xl: 2.5em;
+$spacing-l: 2em;
+$spacing-m: 1.75em;
+$spacing-ms: 1.6em;
+$spacing-mxs: 1.5em;
+$spacing-mxxs: 1.25em;
+$spacing-s: 1em;
+$spacing-xs: 0.7em;
+$spacing-xss: 0.5em;
+$spacing-xxxs: 0.2em;
+$project-padding: 0 $spacing-xl;
+$padding: $spacing-xl $spacing-l;
 
 * {
   box-sizing: border-box;
@@ -74,7 +71,6 @@ html {
   font-size: $font-size;
   font-family: $font-family-body;
 }
-
 body {
   position: relative;
   display: flex;
@@ -82,9 +78,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: $bg-color;
 }
-
 //extend
 .flexColmn {
   display: flex;
@@ -117,6 +111,18 @@ body {
   border-radius: 15px;
   margin-right: $spacing-m;
 }
+.imgOrder {
+  &[title='r10'] {
+    position: relative;
+    right: 10px;
+    z-index: 2;
+  }
+  &[title='r20'] {
+    position: relative;
+    right: 20px;
+    z-index: 3;
+  }
+}
 
 //mixins
 @mixin profilPhoto($img) {
@@ -127,9 +133,9 @@ body {
   border-radius: 50%;
 }
 @mixin iconBox($backgorundColor, $shadowColor) {
-  height: $icon-container-height;
-  width: $icon-container-width;
-  border-radius: $icon-container-radius;
+  height: $icon-container-size;
+  width: $icon-container-size;
+  border-radius: $radius-ls;
   background-color: $backgorundColor;
   @extend .flexCenter;
   -webkit-box-shadow: 0px 25px 32px 3px $shadowColor;
@@ -137,27 +143,22 @@ body {
 @mixin tableBox($backgroundColor) {
 }
 
+//img
 .projectWorker-1 {
   @include profilPhoto('../img/user-1.jpg');
+  @extend .imgOrder;
 }
 .projectWorker-2 {
   @include profilPhoto('../img/user-2.jpg');
-  &[title='r10'] {
-    position: relative;
-    right: 10px;
-    z-index: 2;
-  }
+  @extend .imgOrder;
 }
 .projectWorker-3 {
   @include profilPhoto('../img/user-3.jpg');
-  &[title='r20'] {
-    position: relative;
-    right: 20px;
-    z-index: 3;
-  }
+  @extend .imgOrder;
 }
 .projectWorker-4 {
   @include profilPhoto('../img/user-4.jpg');
+  @extend .imgOrder;
 }
 
 nav {
@@ -167,6 +168,7 @@ nav {
   height: 100%;
   background-color: $secondary;
   padding: $padding;
+  overflow: auto;
 
   .menu {
     @extend .flexColmn;
@@ -175,9 +177,9 @@ nav {
     align-items: flex-start;
     width: 20%;
     height: 100%;
+
     .mTop {
       @extend .flexColmn;
-
       .menu-icon {
         margin-bottom: $spacing-l;
       }
@@ -190,7 +192,7 @@ nav {
           content: '';
           position: absolute;
           bottom: $spacing-l;
-          right: $spacing-xxl;
+          right: $spacing-xxxl;
           display: block;
           width: $spacing-xxxs;
           background: $pink;
@@ -216,16 +218,13 @@ nav {
     }
     .mMiddle {
       @extend .flexColmn;
-      position: relative;
-      bottom: $spacing-xxl;
-
+      bottom: $spacing-xxxl;
       object {
         margin-bottom: $spacing-l;
       }
     }
     .mBottom {
       @extend .flexColmn;
-
       .user-pic {
         @include profilPhoto('../img/user-1.jpg');
         margin-bottom: 1.6em;
@@ -272,7 +271,7 @@ main {
   height: 100%;
   background-color: $primary;
   border-radius: $radius-left-side-xl;
-  padding: $padding;
+
   &::before {
     content: '';
     position: absolute;
@@ -287,261 +286,261 @@ main {
   .sectionArrow {
     position: absolute;
     left: -$spacing-xs;
-    top: $spacing-xxl;
+    top: $spacing-xxxl;
   }
   .container {
-    @extend .flexColmn;
     width: 100%;
     height: 100%;
-
-    .headerSection {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: $spacing-l;
-      .active-menu {
-        margin-top: $spacing-mxs;
-        span {
-          color: $gray;
-          font-size: 1.5rem;
-          font-family: $font-family-logo;
-        }
-        h2 {
-          color: $black;
-          font-size: 3.2rem;
-          letter-spacing: -0.032em;
-        }
-      }
-      .bar {
+    padding: $padding;
+    overflow: auto;
+    .mainWrapper {
+      @extend .flexColmn;
+      width: 100%;
+      height: 100%;
+      .headerSection {
         display: flex;
-
-        .main-btn {
-          margin-left: $spacing-xs;
-          button {
-            @extend .allBtn;
-            height: $main-btn-size;
-            width: $main-btn-size;
-            border-radius: $btn-raidus;
-            background-color: $secondary;
-          }
-        }
-        .search-bar {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 $spacing-mxxs;
-          margin-left: $spacing-mxs;
-          color: $gray;
-          background-color: $secondary;
-          height: $main-btn-size;
-          border-radius: $radius-m;
-          background-color: $secondary;
-          width: 14em;
+        justify-content: space-between;
+        margin-bottom: $spacing-l;
+        .active-menu {
+          margin-top: $spacing-mxs;
           span {
-            font-size: 0.9rem;
-          }
-        }
-      }
-    }
-    .projectSection {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      padding-bottom: $spacing-l;
-      border-bottom: 2px solid $main-border-color;
-
-      .project {
-        @extend .flexColmn;
-        justify-content: flex-start;
-        align-items: center;
-        flex-grow: 5;
-        position: relative;
-        margin-right: $spacing-xl;
-        height: 10.5em;
-        border: $project-box-border;
-        border-radius: $spacing-xl;
-        background-color: $secondary;
-        .pIcon {
-          display: flex;
-          width: 70%;
-          position: relative;
-          bottom: $spacing-l;
-          justify-content: flex-end;
-
-          ///burada kaldın
-
-          .iconContainerLeft {
-            @include iconBox($pink, $transparent-pink);
-          }
-          .iconContainerRight {
-            @include iconBox($blue, $transparent-blue);
-          }
-        }
-        .projectContainer {
-          position: relative;
-          width: 100%;
-          padding: $project-padding;
-          display: flex;
-          justify-content: space-between;
-          bottom: $spacing-m;
-
-          .users {
-            display: flex;
-            position: relative;
-          }
-          .more {
-            position: relative;
-            bottom: $spacing-xss;
-          }
-        }
-        .pName {
-          width: 100%;
-          padding: $project-padding;
-          h3 {
-            font-size: 1.5rem;
-            color: $black;
-          }
-          span {
-            font-size: 0.7rem;
             color: $gray;
-            letter-spacing: 1.4px;
+            font-size: 1.5rem;
+            font-family: $font-family-logo;
+          }
+          h2 {
+            color: $black;
+            font-size: 3.2rem;
+            letter-spacing: -0.032em;
           }
         }
-      }
-      .addProject {
-        flex-grow: 1;
-        height: 230px;
-        width: 90px;
-        border: $project-box-border;
-        border-radius: $radius-l;
-        @extend .flexCenter;
-      }
-    }
-    .taskSection {
-      width: 100%;
-      padding-top: $spacing-xl;
+        .bar {
+          display: flex;
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-
-        th {
-          padding-bottom: 20px;
-        }
-        td {
-          height: 65px;
-        }
-
-        th {
-          text-align: left;
-          padding-left: 5px;
-          &:first-child {
-            padding-left: 25px;
-            object {
-              margin-right: 35px;
+          .main-btn {
+            margin-left: $spacing-xs;
+            button {
+              @extend .allBtn;
+              height: $main-btn-size;
+              width: $main-btn-size;
+              border-radius: $radius-ms;
+              background-color: $secondary;
+            }
+          }
+          .search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 $spacing-mxxs;
+            margin-left: $spacing-mxs;
+            color: $gray;
+            background-color: $secondary;
+            height: $main-btn-size;
+            border-radius: $radius-m;
+            background-color: $secondary;
+            width: 14em;
+            span {
+              font-size: 0.9rem;
             }
           }
         }
-
-        .row {
-          font-size: 0.8rem;
-
-          td:first-child {
-            border-radius: $radius-left-side;
-            padding-left: $spacing-s;
-          }
-          td:last-child {
-            border-radius: $radius-right-side;
-          }
-          .column1,
-          .column4 {
-            width: 350px;
-          }
-          .column2 {
-            width: 400px;
-          }
-          .column3 {
-            width: 250px;
-            text-align: left;
-          }
-        }
-
-        tr:nth-child(even) {
-          background-color: $secondary;
-          padding: $spacing-s;
-        }
       }
-      .tableHad {
+      .projectSection {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        font-size: 0.7rem;
-        color: $gray;
-        letter-spacing: 1.4px;
-      }
-      .dueDate {
-        display: flex;
-        align-items: center;
-        color: $black;
-        letter-spacing: 1.2px;
-        .orangeOrder {
-          @extend .orderBox;
-          background-color: $table-bg-color-1;
-        }
-        .greenOrder {
-          @extend .orderBox;
-          background-color: $table-bg-color-2;
-        }
-        .redOrder {
-          @extend .orderBox;
-          background-color: $table-bg-color-3;
-        }
-      }
-      .taskTitle {
-        display: flex;
-        align-items: center;
-        color: $black;
+        padding-bottom: $spacing-xxl;
+        border-bottom: 2px solid $main-border-color;
 
-        .pinkTaskType {
-          @extend .titleBox;
-          background-color: $pink;
-        }
-        .purpleTaskType {
-          @extend .titleBox;
-          background-color: $table-bg-color-5;
-        }
-      }
-      .status {
-        display: flex;
-        align-items: center;
-        border-radius: 12px;
-        display: inherit;
-        padding: $spacing-xs;
-        font-size: 0.65rem;
+        .project {
+          @extend .flexColmn;
+          justify-content: flex-start;
+          align-items: center;
+          flex-grow: 5;
+          position: relative;
+          margin-right: $spacing-xxl;
+          height: 10.5em;
+          border: $project-box-border;
+          border-radius: $spacing-xxl;
+          background-color: $secondary;
+          // padding: 20px 20px;
+          .pIcon {
+            display: flex;
+            width: 70%;
+            position: relative;
+            bottom: $spacing-l;
+            justify-content: flex-end;
+            margin-bottom: $spacing-xss;
 
-        &[title='backlog'] {
-          background-color: $table-bg-color-7;
-          color: $gray;
+            .iconContainerLeft {
+              @include iconBox($pink, $transparent-pink);
+            }
+            .iconContainerRight {
+              @include iconBox($blue, $transparent-blue);
+            }
+          }
+          .pContainer {
+            width: 100%;
+            position: relative;
+            bottom: $spacing-l;
+            padding: 0 $spacing-l;
+            .projectContainer {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: $spacing-s;
+              .users {
+                display: flex;
+              }
+              .more {
+                position: relative;
+                bottom: $spacing-xss;
+              }
+            }
+            .pName {
+              font-size: 1.5rem;
+              h3 {
+                width: 8em;
+                color: $black;
+              }
+              span {
+                font-size: 0.5em;
+                color: $gray;
+                letter-spacing: 0.1em;
+              }
+            }
+          }
         }
-        &[title='inProgress'] {
-          background-color: $table-bg-color-6;
-          color: $table-color-3;
-        }
-        &[title='done'] {
-          background-color: $table-bg-color-2;
-          color: $table-color-1;
+        .addProject {
+          flex-grow: 1;
+          height: 10.5em;
+          width: 4.5em;
+          border: $project-box-border;
+          border-radius: $radius-l;
+          @extend .flexCenter;
         }
       }
-      .assignee {
-        display: flex;
-        align-items: center;
-        color: $black;
+      .taskSection {
+        width: 100%;
+        padding-top: $spacing-xxl;
 
-        span {
-          margin-left: $spacing-s;
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          tr:nth-child(even) {
+            background-color: $secondary;
+            padding: $spacing-s;
+          }
+          th {
+            padding-bottom: $spacing-s;
+            text-align: left;
+            padding-left: $spacing-xxxs;
+            &:first-child {
+              padding-left: $spacing-mxxs;
+              object {
+                margin-right: $spacing-m;
+              }
+            }
+          }
+          td {
+            height: 4em;
+          }
+
+          .tableHad {
+            width: 100%;
+            font-size: $font-size-m;
+            color: $gray;
+            letter-spacing: 0.08em;
+          }
+          .row {
+            font-size: $font-size-m;
+
+            td:first-child {
+              border-radius: $radius-left-side;
+              padding-left: $spacing-s;
+            }
+            td:last-child {
+              border-radius: $radius-right-side;
+            }
+            .column1,
+            .column4 {
+              width: 22em;
+            }
+            .column2 {
+              width: 25em;
+            }
+            .column3 {
+              width: 15.5em;
+              text-align: left;
+            }
+            .dueDate {
+              display: flex;
+              align-items: center;
+              color: $black;
+              letter-spacing: 0.06px;
+              .orangeOrder {
+                @extend .orderBox;
+                background-color: $table-bg-color-1;
+              }
+              .greenOrder {
+                @extend .orderBox;
+                background-color: $table-bg-color-2;
+              }
+              .redOrder {
+                @extend .orderBox;
+                background-color: $table-bg-color-3;
+              }
+            }
+            .taskTitle {
+              display: flex;
+              align-items: center;
+              color: $black;
+
+              .pinkTaskType {
+                @extend .titleBox;
+                background-color: $pink;
+              }
+              .purpleTaskType {
+                @extend .titleBox;
+                background-color: $table-bg-color-5;
+              }
+            }
+            .status {
+              display: flex;
+              align-items: center;
+              border-radius: $radius-ms;
+              display: inherit;
+              padding: $spacing-xs;
+              font-size: $font-size-xs;
+
+              &[title='backlog'] {
+                background-color: $table-bg-color-7;
+                color: $gray;
+              }
+              &[title='inProgress'] {
+                background-color: $table-bg-color-6;
+                color: $blue;
+              }
+              &[title='done'] {
+                background-color: $table-bg-color-2;
+                color: $green;
+              }
+            }
+            .assignee {
+              display: flex;
+              align-items: center;
+              color: $black;
+
+              span {
+                margin-left: $spacing-s;
+              }
+            }
+            .moreInfo {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
         }
-      }
-      .moreInfo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
     }
   }

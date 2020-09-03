@@ -24,10 +24,9 @@ body {
           justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: #e4e9f8;
 }
 
-.flexColmn, nav .menu, nav .menu .mTop, nav .menu .mTop .textLogo, nav .menu .mMiddle, nav .menu .mBottom, nav .subMenu, main .container, main .container .projectSection .project {
+.flexColmn, nav .menu, nav .menu .mTop, nav .menu .mTop .textLogo, nav .menu .mMiddle, nav .menu .mBottom, nav .subMenu, main .container .mainWrapper, main .container .mainWrapper .projectSection .project {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,12 +36,12 @@ body {
           flex-direction: column;
 }
 
-.allBtn, main .container .headerSection .bar .main-btn button {
+.allBtn, main .container .mainWrapper .headerSection .bar .main-btn button {
   outline: none;
   border: none;
 }
 
-.flexCenter, main .container .projectSection .project .pIcon .iconContainerLeft, main .container .projectSection .project .pIcon .iconContainerRight, main .container .projectSection .addProject {
+.flexCenter, main .container .mainWrapper .projectSection .project .pIcon .iconContainerLeft, main .container .mainWrapper .projectSection .project .pIcon .iconContainerRight, main .container .mainWrapper .projectSection .addProject {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +53,7 @@ body {
           justify-content: center;
 }
 
-.orderBox, main .container .taskSection .dueDate .orangeOrder, main .container .taskSection .dueDate .greenOrder, main .container .taskSection .dueDate .redOrder {
+.orderBox, main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder, main .container .mainWrapper .taskSection table .row .dueDate .greenOrder, main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,7 +69,7 @@ body {
   margin-right: 1.75em;
 }
 
-.titleBox, main .container .taskSection .taskTitle .pinkTaskType, main .container .taskSection .taskTitle .purpleTaskType {
+.titleBox, main .container .mainWrapper .taskSection table .row .taskTitle .pinkTaskType, main .container .mainWrapper .taskSection table .row .taskTitle .purpleTaskType {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,6 +83,18 @@ body {
   height: 35px;
   border-radius: 15px;
   margin-right: 1.75em;
+}
+
+.imgOrder[title='r10'], .projectWorker-1[title='r10'], .projectWorker-2[title='r10'], .projectWorker-3[title='r10'], .projectWorker-4[title='r10'] {
+  position: relative;
+  right: 10px;
+  z-index: 2;
+}
+
+.imgOrder[title='r20'], .projectWorker-1[title='r20'], .projectWorker-2[title='r20'], .projectWorker-3[title='r20'], .projectWorker-4[title='r20'] {
+  position: relative;
+  right: 20px;
+  z-index: 3;
 }
 
 .projectWorker-1 {
@@ -102,24 +113,12 @@ body {
   border-radius: 50%;
 }
 
-.projectWorker-2[title='r10'] {
-  position: relative;
-  right: 10px;
-  z-index: 2;
-}
-
 .projectWorker-3 {
   background-image: url("../img/user-3.jpg");
   background-size: contain;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-}
-
-.projectWorker-3[title='r20'] {
-  position: relative;
-  right: 20px;
-  z-index: 3;
 }
 
 .projectWorker-4 {
@@ -140,7 +139,8 @@ nav {
   width: 20%;
   height: 100%;
   background-color: #f4f6fd;
-  padding: 50px 40px;
+  padding: 2.5em 2em;
+  overflow: auto;
 }
 
 nav .menu {
@@ -197,7 +197,6 @@ nav .menu .mTop .textLogo .dot {
 }
 
 nav .menu .mMiddle {
-  position: relative;
   bottom: 4.5em;
 }
 
@@ -254,7 +253,6 @@ main {
   height: 100%;
   background-color: #ffffff;
   border-radius: 3em 0 0 3em;
-  padding: 50px 40px;
 }
 
 main::before {
@@ -278,9 +276,16 @@ main .sectionArrow {
 main .container {
   width: 100%;
   height: 100%;
+  padding: 2.5em 2em;
+  overflow: auto;
 }
 
-main .container .headerSection {
+main .container .mainWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+main .container .mainWrapper .headerSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,40 +295,40 @@ main .container .headerSection {
   margin-bottom: 2em;
 }
 
-main .container .headerSection .active-menu {
+main .container .mainWrapper .headerSection .active-menu {
   margin-top: 1.5em;
 }
 
-main .container .headerSection .active-menu span {
+main .container .mainWrapper .headerSection .active-menu span {
   color: #8894b5;
   font-size: 1.5rem;
   font-family: "Libre Baskerville", serif;
 }
 
-main .container .headerSection .active-menu h2 {
+main .container .mainWrapper .headerSection .active-menu h2 {
   color: #2c3550;
   font-size: 3.2rem;
   letter-spacing: -0.032em;
 }
 
-main .container .headerSection .bar {
+main .container .mainWrapper .headerSection .bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-main .container .headerSection .bar .main-btn {
+main .container .mainWrapper .headerSection .bar .main-btn {
   margin-left: 0.7em;
 }
 
-main .container .headerSection .bar .main-btn button {
+main .container .mainWrapper .headerSection .bar .main-btn button {
   height: 55px;
   width: 55px;
-  border-radius: 14px;
+  border-radius: 1.2em;
   background-color: #f4f6fd;
 }
 
-main .container .headerSection .bar .search-bar {
+main .container .mainWrapper .headerSection .bar .search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -343,11 +348,11 @@ main .container .headerSection .bar .search-bar {
   width: 14em;
 }
 
-main .container .headerSection .bar .search-bar span {
+main .container .mainWrapper .headerSection .bar .search-bar span {
   font-size: 0.9rem;
 }
 
-main .container .projectSection {
+main .container .mainWrapper .projectSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,11 +360,11 @@ main .container .projectSection {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   border-bottom: 2px solid #f1f4fb;
 }
 
-main .container .projectSection .project {
+main .container .mainWrapper .projectSection .project {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -377,7 +382,7 @@ main .container .projectSection .project {
   background-color: #f4f6fd;
 }
 
-main .container .projectSection .project .pIcon {
+main .container .mainWrapper .projectSection .project .pIcon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,146 +392,146 @@ main .container .projectSection .project .pIcon {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-bottom: 0.5em;
 }
 
-main .container .projectSection .project .pIcon .iconContainerLeft {
+main .container .mainWrapper .projectSection .project .pIcon .iconContainerLeft {
   height: 72px;
   width: 72px;
-  border-radius: 27px;
+  border-radius: 2.7em;
   background-color: #ff48ee;
   -webkit-box-shadow: 0px 25px 32px 3px #ff48ee5e;
 }
 
-main .container .projectSection .project .pIcon .iconContainerRight {
+main .container .mainWrapper .projectSection .project .pIcon .iconContainerRight {
   height: 72px;
   width: 72px;
-  border-radius: 27px;
+  border-radius: 2.7em;
   background-color: #6171ff;
   -webkit-box-shadow: 0px 25px 32px 3px #6171ff5e;
 }
 
-main .container .projectSection .project .projectContainer {
-  position: relative;
+main .container .mainWrapper .projectSection .project .pContainer {
   width: 100%;
-  padding: 0 50px;
+  position: relative;
+  bottom: 2em;
+  padding: 0 2em;
+}
+
+main .container .mainWrapper .projectSection .project .pContainer .projectContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  bottom: 1.75em;
+  margin-bottom: 1em;
 }
 
-main .container .projectSection .project .projectContainer .users {
+main .container .mainWrapper .projectSection .project .pContainer .projectContainer .users {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
 }
 
-main .container .projectSection .project .projectContainer .more {
+main .container .mainWrapper .projectSection .project .pContainer .projectContainer .more {
   position: relative;
   bottom: 0.5em;
 }
 
-main .container .projectSection .project .pName {
-  width: 100%;
-  padding: 0 50px;
+main .container .mainWrapper .projectSection .project .pContainer .pName {
+  font-size: 1.5rem;
 }
 
-main .container .projectSection .project .pName h3 {
-  font-size: 1.5rem;
+main .container .mainWrapper .projectSection .project .pContainer .pName h3 {
+  width: 8em;
   color: #2c3550;
 }
 
-main .container .projectSection .project .pName span {
-  font-size: 0.7rem;
+main .container .mainWrapper .projectSection .project .pContainer .pName span {
+  font-size: 0.5em;
   color: #8894b5;
-  letter-spacing: 1.4px;
+  letter-spacing: 0.1em;
 }
 
-main .container .projectSection .addProject {
+main .container .mainWrapper .projectSection .addProject {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  height: 230px;
-  width: 90px;
+  height: 10.5em;
+  width: 4.5em;
   border: 3px solid #e6e9f4;
   border-radius: 3em;
 }
 
-main .container .taskSection {
+main .container .mainWrapper .taskSection {
   width: 100%;
   padding-top: 3em;
 }
 
-main .container .taskSection table {
+main .container .mainWrapper .taskSection table {
   width: 100%;
   border-collapse: collapse;
 }
 
-main .container .taskSection table th {
-  padding-bottom: 20px;
-}
-
-main .container .taskSection table td {
-  height: 65px;
-}
-
-main .container .taskSection table th {
-  text-align: left;
-  padding-left: 5px;
-}
-
-main .container .taskSection table th:first-child {
-  padding-left: 25px;
-}
-
-main .container .taskSection table th:first-child object {
-  margin-right: 35px;
-}
-
-main .container .taskSection table .row {
-  font-size: 0.8rem;
-}
-
-main .container .taskSection table .row td:first-child {
-  border-radius: 1.2em 0 0 1.2em;
-  padding-left: 1em;
-}
-
-main .container .taskSection table .row td:last-child {
-  border-radius: 0 1.2em 1.2em 0;
-}
-
-main .container .taskSection table .row .column1,
-main .container .taskSection table .row .column4 {
-  width: 350px;
-}
-
-main .container .taskSection table .row .column2 {
-  width: 400px;
-}
-
-main .container .taskSection table .row .column3 {
-  width: 250px;
-  text-align: left;
-}
-
-main .container .taskSection table tr:nth-child(even) {
+main .container .mainWrapper .taskSection table tr:nth-child(even) {
   background-color: #f4f6fd;
   padding: 1em;
 }
 
-main .container .taskSection .tableHad {
-  width: 100%;
-  font-size: 0.7rem;
-  color: #8894b5;
-  letter-spacing: 1.4px;
+main .container .mainWrapper .taskSection table th {
+  padding-bottom: 1em;
+  text-align: left;
+  padding-left: 0.2em;
 }
 
-main .container .taskSection .dueDate {
+main .container .mainWrapper .taskSection table th:first-child {
+  padding-left: 1.25em;
+}
+
+main .container .mainWrapper .taskSection table th:first-child object {
+  margin-right: 1.75em;
+}
+
+main .container .mainWrapper .taskSection table td {
+  height: 4em;
+}
+
+main .container .mainWrapper .taskSection table .tableHad {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #8894b5;
+  letter-spacing: 0.08em;
+}
+
+main .container .mainWrapper .taskSection table .row {
+  font-size: 0.8rem;
+}
+
+main .container .mainWrapper .taskSection table .row td:first-child {
+  border-radius: 1.2em 0 0 1.2em;
+  padding-left: 1em;
+}
+
+main .container .mainWrapper .taskSection table .row td:last-child {
+  border-radius: 0 1.2em 1.2em 0;
+}
+
+main .container .mainWrapper .taskSection table .row .column1,
+main .container .mainWrapper .taskSection table .row .column4 {
+  width: 22em;
+}
+
+main .container .mainWrapper .taskSection table .row .column2 {
+  width: 25em;
+}
+
+main .container .mainWrapper .taskSection table .row .column3 {
+  width: 15.5em;
+  text-align: left;
+}
+
+main .container .mainWrapper .taskSection table .row .dueDate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,22 +539,22 @@ main .container .taskSection .dueDate {
       -ms-flex-align: center;
           align-items: center;
   color: #2c3550;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.06px;
 }
 
-main .container .taskSection .dueDate .orangeOrder {
+main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder {
   background-color: #f6e8d7;
 }
 
-main .container .taskSection .dueDate .greenOrder {
+main .container .mainWrapper .taskSection table .row .dueDate .greenOrder {
   background-color: #cfffde;
 }
 
-main .container .taskSection .dueDate .redOrder {
+main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
   background-color: #f6d1d7;
 }
 
-main .container .taskSection .taskTitle {
+main .container .mainWrapper .taskSection table .row .taskTitle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -559,43 +564,43 @@ main .container .taskSection .taskTitle {
   color: #2c3550;
 }
 
-main .container .taskSection .taskTitle .pinkTaskType {
+main .container .mainWrapper .taskSection table .row .taskTitle .pinkTaskType {
   background-color: #ff48ee;
 }
 
-main .container .taskSection .taskTitle .purpleTaskType {
+main .container .mainWrapper .taskSection table .row .taskTitle .purpleTaskType {
   background-color: #9646ff;
 }
 
-main .container .taskSection .status {
+main .container .mainWrapper .taskSection table .row .status {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 12px;
+  border-radius: 1.2em;
   display: inherit;
   padding: 0.7em;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
 }
 
-main .container .taskSection .status[title='backlog'] {
+main .container .mainWrapper .taskSection table .row .status[title='backlog'] {
   background-color: #d8ddef;
   color: #8894b5;
 }
 
-main .container .taskSection .status[title='inProgress'] {
+main .container .mainWrapper .taskSection table .row .status[title='inProgress'] {
   background-color: #d1e4ff;
-  color: #207cff;
+  color: #6171ff;
 }
 
-main .container .taskSection .status[title='done'] {
+main .container .mainWrapper .taskSection table .row .status[title='done'] {
   background-color: #cfffde;
   color: #0da03b;
 }
 
-main .container .taskSection .assignee {
+main .container .mainWrapper .taskSection table .row .assignee {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,11 +610,11 @@ main .container .taskSection .assignee {
   color: #2c3550;
 }
 
-main .container .taskSection .assignee span {
+main .container .mainWrapper .taskSection table .row .assignee span {
   margin-left: 1em;
 }
 
-main .container .taskSection .moreInfo {
+main .container .mainWrapper .taskSection table .row .moreInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
