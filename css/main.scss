@@ -27,7 +27,8 @@ $font-family-logo: 'Libre Baskerville', serif;
 $font-family-body: 'Roboto', sans-serif;
 $font-size: 1.25rem;
 $font-size-l: 2rem;
-$font-size-m: 0.8rem;
+$font-size-m: 1em;
+$font-size-ms: 0.8rem;
 $font-size-s: 0.7rem;
 $font-size-xs: 0.6rem;
 
@@ -242,7 +243,7 @@ nav {
     justify-content: space-between;
     flex: 0 0 60%;
     height: 100%;
-    font-size: $font-size-m;
+    font-size: $font-size-ms;
 
     .sTop {
       li {
@@ -349,8 +350,6 @@ main {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding-bottom: $spacing-xxl;
-        border-bottom: 2px solid $main-border-color;
 
         .project {
           @extend .flexColmn;
@@ -417,19 +416,19 @@ main {
           @extend .flexCenter;
         }
       }
+      .sectionBlock {
+        width: 100%;
+        border-bottom: 2px solid $main-border-color;
+        margin: auto 0;
+      }
       .taskSection {
         width: 100%;
         overflow-y: auto;
-        padding-top: $spacing-xxl;
-        // -ms-overflow-style: none; /* IE and Edge */
-        // scrollbar-width: none; /* Firefox */
-        // &::-webkit-scrollbar {
-        //   display: none;
-        // }
+        // padding-top: $spacing-xxl;
 
         table {
           width: 100%;
-          min-width: 800px;
+          min-width: 530px;
           border-collapse: collapse;
           tr {
             &:nth-child(even) {
@@ -450,12 +449,12 @@ main {
 
           .tableHad {
             width: 100%;
-            font-size: $font-size-m;
+            font-size: $font-size-ms;
             color: $gray;
             letter-spacing: 0.08em;
           }
           .row {
-            font-size: $font-size-m;
+            font-size: $font-size-ms;
             height: 4em;
 
             td:first-child {
@@ -466,12 +465,12 @@ main {
               border-radius: $radius-right-side;
             }
             .column1 {
-              width: 25%;
+              width: 22%;
               padding-right: $spacing-xss;
             }
 
             .column2 {
-              width: 30%;
+              width: 28%;
               padding-right: $spacing-xss;
             }
             .column3 {
@@ -480,11 +479,11 @@ main {
             }
             .column4 {
               padding-right: $spacing-xss;
-              width: 28%;
+              width: 24%;
             }
             .column5 {
               padding-right: $spacing-xss;
-              width: 22%;
+              width: 4%;
             }
             .dueDate {
               display: flex;
@@ -561,6 +560,50 @@ main {
 }
 
 @media screen and (max-width: 1210px) {
+  html {
+    font-size: $font-size-m;
+  }
+
+  .orderBox {
+    margin-right: 0 !important;
+  }
+
+  .titleBox {
+    margin-right: $spacing-xs !important;
+  }
+
+  .container {
+    padding-bottom: 5.5em !important;
+    th:first-child {
+      object {
+        padding-left: $spacing-xs;
+        margin-right: 0 !important;
+      }
+      span {
+        display: none;
+      }
+    }
+
+    .column1 {
+      width: 13% !important;
+      padding-right: $spacing-xss;
+      .dueDate {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .column4 {
+      width: 13% !important;
+      .assignee {
+        padding-left: 0.9em;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

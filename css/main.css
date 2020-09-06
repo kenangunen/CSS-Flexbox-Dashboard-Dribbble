@@ -368,8 +368,6 @@ main .container .mainWrapper .projectSection {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding-bottom: 3em;
-  border-bottom: 2px solid #f1f4fb;
 }
 
 main .container .mainWrapper .projectSection .project {
@@ -470,15 +468,20 @@ main .container .mainWrapper .projectSection .addProject {
   border-radius: 3em;
 }
 
+main .container .mainWrapper .sectionBlock {
+  width: 100%;
+  border-bottom: 2px solid #f1f4fb;
+  margin: auto 0;
+}
+
 main .container .mainWrapper .taskSection {
   width: 100%;
   overflow-y: auto;
-  padding-top: 3em;
 }
 
 main .container .mainWrapper .taskSection table {
   width: 100%;
-  min-width: 800px;
+  min-width: 530px;
   border-collapse: collapse;
 }
 
@@ -522,12 +525,12 @@ main .container .mainWrapper .taskSection table .row td:last-child {
 }
 
 main .container .mainWrapper .taskSection table .row .column1 {
-  width: 25%;
+  width: 22%;
   padding-right: 0.5em;
 }
 
 main .container .mainWrapper .taskSection table .row .column2 {
-  width: 30%;
+  width: 28%;
   padding-right: 0.5em;
 }
 
@@ -538,12 +541,12 @@ main .container .mainWrapper .taskSection table .row .column3 {
 
 main .container .mainWrapper .taskSection table .row .column4 {
   padding-right: 0.5em;
-  width: 28%;
+  width: 24%;
 }
 
 main .container .mainWrapper .taskSection table .row .column5 {
   padding-right: 0.5em;
-  width: 22%;
+  width: 4%;
 }
 
 main .container .mainWrapper .taskSection table .row .dueDate {
@@ -639,5 +642,43 @@ main .container .mainWrapper .taskSection table .row .moreInfo {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 1210px) {
+  html {
+    font-size: 1em;
+  }
+  .orderBox, main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder, main .container .mainWrapper .taskSection table .row .dueDate .greenOrder, main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
+    margin-right: 0 !important;
+  }
+  .titleBox, main .container .mainWrapper .taskSection table .row .taskTitle .pinkTaskType, main .container .mainWrapper .taskSection table .row .taskTitle .purpleTaskType {
+    margin-right: 0.7em !important;
+  }
+  .container {
+    padding-bottom: 5.5em !important;
+  }
+  .container th:first-child object {
+    padding-left: 0.7em;
+    margin-right: 0 !important;
+  }
+  .container th:first-child span {
+    display: none;
+  }
+  .container .column1 {
+    width: 13% !important;
+    padding-right: 0.5em;
+  }
+  .container .column1 .dueDate span {
+    display: none;
+  }
+  .container .column4 {
+    width: 13% !important;
+  }
+  .container .column4 .assignee {
+    padding-left: 0.9em;
+  }
+  .container .column4 .assignee span {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
