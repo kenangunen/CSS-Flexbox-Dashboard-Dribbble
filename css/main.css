@@ -137,10 +137,7 @@ nav {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-          flex: 0 0 20%;
-  min-width: 14em;
+  width: 20%;
   height: 100%;
   background-color: #f4f6fd;
   padding: 2.5em 1em;
@@ -152,9 +149,7 @@ nav .menu {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-          flex: 0 0 20%;
+  width: 20%;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -230,9 +225,7 @@ nav .subMenu {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 60%;
-          flex: 0 0 60%;
+  width: 60%;
   height: 100%;
   font-size: 0.8rem;
 }
@@ -377,8 +370,7 @@ main .container .mainWrapper .projectSection .project {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  width: 40%;
   position: relative;
   height: 10.5em;
   border: 3px solid #e6e9f4;
@@ -444,7 +436,7 @@ main .container .mainWrapper .projectSection .project .pContainer .projectContai
 }
 
 main .container .mainWrapper .projectSection .project .pContainer .pName {
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 main .container .mainWrapper .projectSection .project .pContainer .pName h3 {
@@ -648,6 +640,13 @@ main .container .mainWrapper .taskSection table .row .moreInfo {
   html {
     font-size: 1em;
   }
+  nav .menu {
+    margin-right: 1em;
+  }
+  nav .menu .mBottom .user-pic {
+    width: 2em !important;
+    height: 2em !important;
+  }
   .orderBox, main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder, main .container .mainWrapper .taskSection table .row .dueDate .greenOrder, main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
     margin-right: 0 !important;
   }
@@ -657,27 +656,63 @@ main .container .mainWrapper .taskSection table .row .moreInfo {
   .container {
     padding-bottom: 5.5em !important;
   }
-  .container th:first-child object {
+  .container .headerSection {
+    margin-bottom: 3em !important;
+  }
+  .container .headerSection .active-menu {
+    margin-top: 4.5em !important;
+  }
+  .container .headerSection .active-menu h2 {
+    font-size: 2.5em !important;
+  }
+  .container .headerSection .bar {
+    font-size: 0.6rem;
+  }
+  .container .projectSection .project {
+    width: 40% !important;
+  }
+  .container .projectSection .project .pIcon {
+    bottom: 1.5em !important;
+  }
+  .container .projectSection .project .pIcon .iconContainerLeft,
+  .container .projectSection .project .pIcon .iconContainerRight {
+    width: 3em !important;
+    height: 3em !important;
+  }
+  .container .projectSection .project .pContainer {
+    padding: 0 1em !important;
+  }
+  .container .projectSection .project .pContainer .pName h3 {
+    font-size: 1em;
+  }
+  .container .projectSection .project .pContainer .projectWorker-1,
+  .container .projectSection .project .pContainer .projectWorker-2,
+  .container .projectSection .project .pContainer .projectWorker-3,
+  .container .projectSection .project .pContainer .projectWorker-4 {
+    width: 2.2em !important;
+    height: 2.2em !important;
+  }
+  .container .taskSection th:first-child object {
     padding-left: 0.7em;
     margin-right: 0 !important;
   }
-  .container th:first-child span {
+  .container .taskSection th:first-child span {
     display: none;
   }
-  .container .column1 {
+  .container .taskSection .column1 {
     width: 13% !important;
     padding-right: 0.5em;
   }
-  .container .column1 .dueDate span {
+  .container .taskSection .column1 .dueDate span {
     display: none;
   }
-  .container .column4 {
+  .container .taskSection .column4 {
     width: 13% !important;
   }
-  .container .column4 .assignee {
+  .container .taskSection .column4 .assignee {
     padding-left: 0.9em;
   }
-  .container .column4 .assignee span {
+  .container .taskSection .column4 .assignee span {
     display: none;
   }
 }
