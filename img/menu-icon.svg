@@ -1,19 +1,11 @@
-<svg width="24.000000000000004" height="24.000000000000004" xmlns="http://www.w3.org/2000/svg">
-
- <g>
-  <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
- </g>
- <g>
-  <title>Layer 1</title>
-  <circle id="svg_1" r="2" cy="11.826389" cx="12.069444"/>
-  <circle id="svg_2" r="2" cy="4.861111" cx="12.069444"/>
-  <circle id="svg_3" r="2" cy="18.930555" cx="12.069444"/>
-  <circle id="svg_4" r="2" cy="11.826389" cx="5.88889"/>
-  <circle id="svg_5" r="2" cy="4.861111" cx="5.88889"/>
-  <circle id="svg_6" r="2" cy="18.930556" cx="5.88889"/>
-  <circle id="svg_7" r="2" cy="11.826389" cx="17.902777"/>
-  <circle id="svg_8" r="2" cy="4.861111" cx="17.902777"/>
-  <circle id="svg_9" r="2" cy="18.930556" cx="17.902777"/>
- </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H4V4H0V0Z" fill="#2C3550"/>
+<path d="M0 6H4V10H0V6Z" fill="#2C3550"/>
+<path d="M0 12H4V16H0V12Z" fill="#2C3550"/>
+<path d="M6 0H10V4H6V0Z" fill="#2C3550"/>
+<path d="M6 6H10V10H6V6Z" fill="#2C3550"/>
+<path d="M6 12H10V16H6V12Z" fill="#2C3550"/>
+<path d="M12 0H16V4H12V0Z" fill="#2C3550"/>
+<path d="M12 6H16V10H12V6Z" fill="#2C3550"/>
+<path d="M12 12H16V16H12V12Z" fill="#2C3550"/>
 </svg>

@@ -98,6 +98,15 @@ body {
   z-index: 3;
 }
 
+.user-pic {
+  background-image: url("../img/user-1.jpg");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 1.6em;
+}
+
 .projectWorker-1 {
   background-image: url("../img/user-1.jpg");
   background-size: contain;
@@ -205,15 +214,6 @@ nav .menu .mMiddle object {
   margin-bottom: 2em;
 }
 
-nav .menu .mBottom .user-pic {
-  background-image: url("../img/user-1.jpg");
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-bottom: 1.6em;
-}
-
 nav .block {
   margin-right: 1em;
   border: 1px solid #e6e9f4;
@@ -279,6 +279,10 @@ main .container {
   height: 100%;
   padding: 2.5em 2em;
   overflow: auto;
+}
+
+main .container .mobile {
+  display: none;
 }
 
 main .container .mainWrapper {
@@ -636,9 +640,15 @@ main .container .mainWrapper .taskSection table .row .moreInfo {
           justify-content: center;
 }
 
-@media screen and (max-width: 1210px) {
-  html {
-    font-size: 1em;
+@media screen and (max-width: 1280px) {
+  .orderBox, main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder, main .container .mainWrapper .taskSection table .row .dueDate .greenOrder, main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
+    margin-right: 0 !important;
+  }
+  .titleBox, main .container .mainWrapper .taskSection table .row .taskTitle .pinkTaskType, main .container .mainWrapper .taskSection table .row .taskTitle .purpleTaskType {
+    margin-right: 0.7em !important;
+  }
+  nav {
+    width: 25% !important;
   }
   nav .menu {
     margin-right: 1em;
@@ -647,73 +657,225 @@ main .container .mainWrapper .taskSection table .row .moreInfo {
     width: 2em !important;
     height: 2em !important;
   }
-  .orderBox, main .container .mainWrapper .taskSection table .row .dueDate .orangeOrder, main .container .mainWrapper .taskSection table .row .dueDate .greenOrder, main .container .mainWrapper .taskSection table .row .dueDate .redOrder {
-    margin-right: 0 !important;
+  main {
+    width: 75% !important;
   }
-  .titleBox, main .container .mainWrapper .taskSection table .row .taskTitle .pinkTaskType, main .container .mainWrapper .taskSection table .row .taskTitle .purpleTaskType {
-    margin-right: 0.7em !important;
+  main .mainWrapper .headerSection .active-menu {
+    margin-top: 0 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
   }
-  .container {
-    padding-bottom: 5.5em !important;
+  main .mainWrapper .headerSection .active-menu span {
+    position: relative;
+    top: 0.3em;
+    margin-right: 0.5em;
   }
-  .container .headerSection {
-    margin-bottom: 3em !important;
-  }
-  .container .headerSection .active-menu {
-    margin-top: 4.5em !important;
-  }
-  .container .headerSection .active-menu h2 {
+  main .mainWrapper .headerSection .active-menu h2 {
     font-size: 2.5em !important;
   }
-  .container .headerSection .bar {
+  main .mainWrapper .headerSection .bar {
+    width: auto !important;
+    min-width: 250px;
     font-size: 0.6rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
   }
-  .container .projectSection .project {
-    width: 40% !important;
+  main .mainWrapper .headerSection .bar .main-btn {
+    display: none;
   }
-  .container .projectSection .project .pIcon {
-    bottom: 1.5em !important;
+  main .mainWrapper .headerSection .bar .search-bar {
+    margin-left: 0 !important;
+    width: auto !important;
+    padding: 1.5em !important;
   }
-  .container .projectSection .project .pIcon .iconContainerLeft,
-  .container .projectSection .project .pIcon .iconContainerRight {
+  main .mainWrapper .headerSection .bar .search-bar span {
+    display: none;
+  }
+  main .mainWrapper .projectSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  main .mainWrapper .projectSection .project {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+    width: 45% !important;
+    min-width: 350px;
+    height: 6em !important;
+  }
+  main .mainWrapper .projectSection .project:first-child {
+    margin-bottom: 1.75em;
+  }
+  main .mainWrapper .projectSection .project .pIcon {
+    display: initial !important;
+    width: auto !important;
+    bottom: 0 !important;
+    margin-bottom: 0 !important;
+    right: 1em;
+  }
+  main .mainWrapper .projectSection .project .pIcon .iconContainerLeft,
+  main .mainWrapper .projectSection .project .pIcon .iconContainerRight {
     width: 3em !important;
     height: 3em !important;
   }
-  .container .projectSection .project .pContainer {
-    padding: 0 1em !important;
+  main .mainWrapper .projectSection .project .pContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto !important;
+    bottom: 0 !important;
+    padding: 0 !important;
   }
-  .container .projectSection .project .pContainer .pName h3 {
+  main .mainWrapper .projectSection .project .pContainer .projectContainer {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    padding-top: 0.7em;
+  }
+  main .mainWrapper .projectSection .project .pContainer .projectContainer .users {
+    display: none !important;
+  }
+  main .mainWrapper .projectSection .project .pContainer .pName h3 {
     font-size: 1em;
   }
-  .container .projectSection .project .pContainer .projectWorker-1,
-  .container .projectSection .project .pContainer .projectWorker-2,
-  .container .projectSection .project .pContainer .projectWorker-3,
-  .container .projectSection .project .pContainer .projectWorker-4 {
-    width: 2.2em !important;
-    height: 2.2em !important;
+  main .mainWrapper .projectSection .addProject {
+    display: none !important;
   }
-  .container .taskSection th:first-child object {
+  main .mainWrapper .taskSection th:first-child object {
     padding-left: 0.7em;
     margin-right: 0 !important;
   }
-  .container .taskSection th:first-child span {
+  main .mainWrapper .taskSection th:first-child span {
     display: none;
   }
-  .container .taskSection .column1 {
+  main .mainWrapper .taskSection .column1 {
     width: 13% !important;
     padding-right: 0.5em;
   }
-  .container .taskSection .column1 .dueDate span {
+  main .mainWrapper .taskSection .column1 .dueDate span {
     display: none;
   }
-  .container .taskSection .column4 {
+  main .mainWrapper .taskSection .column4 {
     width: 13% !important;
   }
-  .container .taskSection .column4 .assignee {
+  main .mainWrapper .taskSection .column4 .assignee {
     padding-left: 0.9em;
   }
-  .container .taskSection .column4 .assignee span {
+  main .mainWrapper .taskSection .column4 .assignee span {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .menu,
+  nav .block {
+    display: none;
+  }
+  .container .headerSection .bar {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  body {
+    height: auto !important;
+    overflow: auto !important;
+  }
+  nav {
+    display: none;
+  }
+  main {
+    border-radius: 0 !important;
+    width: 100% !important;
+  }
+  main .container {
+    padding: 1.5em 1em !important;
+  }
+  main .container .mainWrapper .mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto !important;
+    position: relative;
+    margin-bottom: 1em;
+  }
+  main .container .mainWrapper .mobile object {
+    width: 1em;
+  }
+  main .container .mainWrapper .mobile .user-pic {
+    margin-bottom: 0 !important;
+    background-repeat: none;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  main .container .mainWrapper .headerSection {
+    margin-bottom: 1em;
+  }
+  main .container .mainWrapper .headerSection .active-menu span {
+    position: relative;
+    top: 0.4em;
+    font-size: 1em !important;
+  }
+  main .container .mainWrapper .headerSection .active-menu h2 {
+    font-size: 2em !important;
+  }
+  main .container .mainWrapper .projectSection {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .container .mainWrapper .projectSection .project {
+    width: 100% !important;
+    min-width: auto !important;
+    padding: 0 2em;
+    margin-bottom: 1em !important;
+    overflow: hidden;
+  }
+  main .container .mainWrapper .projectSection .project .pIcon {
+    right: 0 !important;
+    margin-right: 1em;
+    bottom: 0.1em !important;
+  }
+  main .container .mainWrapper .projectSection .project .pContainer .projectContainer .more {
+    display: none;
+  }
+  main .container .mainWrapper .projectSection .project .pContainer .pName h3 {
+    font-size: 0.7em;
+  }
+  main .container .mainWrapper .projectSection .addProject {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-flex: 0 !important;
+        -ms-flex: none !important;
+            flex: none !important;
+    width: 3em !important;
+    min-width: auto !important;
+    height: 3em !important;
+  }
+  main .container .mainWrapper .sectionBlock {
+    margin: 2em 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
