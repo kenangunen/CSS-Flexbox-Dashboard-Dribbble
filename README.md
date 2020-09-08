@@ -20,4 +20,4 @@ Linglee CSS Grid implementation based on https://dribbble.com/shots/10071908-Pro
 
 #### Mobile UI
 
-![Alt text](/screenshot/mobile.png)
+![Alt text](/screenshot/mobile_UI.png)
