@@ -16,8 +16,9 @@ Linglee CSS Grid implementation based on https://dribbble.com/shots/10071908-Pro
 
 #### Desktop UI
 
-![Alt text](/screenshot/web_UI.png)
+![web_UI](https://user-images.githubusercontent.com/20819760/92442877-507f8680-f1b9-11ea-92f2-a1dd13ab771b.png)
+
 
 #### Mobile UI
 
-![Alt text](/screenshot/mobile.png)
+![mobile_UI](https://user-images.githubusercontent.com/20819760/92442929-642aed00-f1b9-11ea-9960-603cd7b5a640.png)
